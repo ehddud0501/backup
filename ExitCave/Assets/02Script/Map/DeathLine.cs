@@ -11,7 +11,10 @@ public class DeathLine : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Time.timeScale = 0;
+            _playerHP.hp = 0;
+            _playerHP.onChangeHP = true;
             _playerHP.onDie = true;
+            
         }
     }
 

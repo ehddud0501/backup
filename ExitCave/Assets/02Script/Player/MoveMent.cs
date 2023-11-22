@@ -1,10 +1,9 @@
+using PlatForm.Audio;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
-using static UnityEditor.Searcher.SearcherWindow.Alignment;
-using Debug = UnityEngine.Debug;
 
 namespace PlatForm.player
 {
@@ -16,7 +15,10 @@ namespace PlatForm.player
         public const int DIRECTION_RIGHT = 1;
         public const int DIRECTION_LEFT = -1;
         public Rigidbody2D _rigidbody2D;
-        private float _speed = 4.0f;
+        private float _speed = 4.8f;
+        private float acceleration;
+        private float max;
+
         private Vector2 _move;
 
         public int direction
@@ -88,16 +90,17 @@ namespace PlatForm.player
             if (isDirectionChangeable)
             {
                 if (_horizontal < 0)
-                    direction = DIRECTION_RIGHT;
-                else if (_horizontal > 0)
                     direction = DIRECTION_LEFT;
+                else if (_horizontal > 0)
+                    direction = DIRECTION_RIGHT;
             }
 
 
         }
 
         private void FixedUpdate()
-        {
+        {              
+            
             _rigidbody2D.position += _move * _speed * Time.fixedDeltaTime;
         }
 

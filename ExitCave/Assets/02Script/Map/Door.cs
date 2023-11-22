@@ -7,13 +7,11 @@ namespace PlatForm.Map
 {
     public class Door : MonoBehaviour
     {
+        [SerializeField] private Sprite[] OpenCloseDoor;
         [SerializeField] private SpriteRenderer sprite;
         [SerializeField] private SwitchTriger[] switchTriger;
-        [SerializeField] private Sprite[] OpenCloseDoor;
         [SerializeField] private bool OneOrMultipleSwitch;
         public bool doorOnOff;
-
-
         private void Update()
         {
             if(OneOrMultipleSwitch)

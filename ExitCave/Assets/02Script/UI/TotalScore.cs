@@ -1,3 +1,4 @@
+using PlatForm.Audio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,8 +9,8 @@ namespace PlatForm.Score
 {
     public class TotalScore : MonoBehaviour
     {
+        [SerializeField] private AudioMachine playSound;
         [SerializeField] private Text _totalScoreText;
-        private PlusScore plusScore;
         public int totalScore;
         public bool scoreInput;
 
@@ -19,6 +20,7 @@ namespace PlatForm.Score
             {
                 _totalScoreText.text = totalScore.ToString();
                 scoreInput = false;
+                playSound.PlaySound("INSCORE");
             }
         }
 

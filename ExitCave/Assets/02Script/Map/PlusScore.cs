@@ -11,8 +11,6 @@ namespace PlatForm.Score
         [SerializeField] private TotalScore total;
         [SerializeField] private int score;
 
-
-
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.tag == "Player")
