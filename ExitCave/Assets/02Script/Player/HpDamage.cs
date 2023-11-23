@@ -34,7 +34,6 @@ namespace PlatForm.player
             player.spriteRenderer.color = new Color(1, 1, 1, 0.4f);            
         }
 
-
         private void OffDamage()
         {
             playerLayer.layer = 10;
